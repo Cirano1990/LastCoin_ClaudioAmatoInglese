@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
+
+
+@theme {
+  /* FONTS */
+  --font-primary: "Audiowide", sans-serif;
+  --font-title: "Bitcount Grid Double", system-ui;
+
+  /* Principali */
+  --color-primary: #000000;
+  --color-secondary: #121212;
+  --color-tertiary: #003399;
+  --color-quaternary: #FC0FC0;
+  --color-intersector: #FC0FC0;
+  --color-middle: #003399;
+
+  /* Text */
+  --color-text: #FFFFF0;
+  --color-text-hover: #003399;
+
+  /* Accent  */
+  --color-accent: #FFFFF0;
+  --color-accent-hover: #003399;
+
+  /* Focus */
+  --color-focus: #FFFFF0;
+
+  /* Grays */
+  --color-smooth: #C0C0C0; /* gray-500 */
+
+  /* States */
+  --color-error: #ef4444; /* red-500 */
+  --color-error-hover: #f87171; /* red-400 */
+  --color-success: #10b981; /* emerald-500 */
+}
+
+* {
+  font-family: "Bitcount Grid Double", system-ui;
+}
+
+.font-title {
+  font-family: "Bitcount Grid Double", system-ui;
+}
+
+h1 {
+  font-family: "Bitcount Grid Double", system-ui;
+  text-shadow: #FC0FC0 0px 0px 10px;
+}
+
+/* Nasconde la scrollbar ma consente lo scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE e Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #334155 inset; /* slate-700 */
+  -webkit-text-fill-color: #fff; /* testo bianco */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/*Font families*/
+
+.orbitron {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+}
+
+.orbitron-bold {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+}
+
+.bitcount {
+  font-family: "Bitcount Grid Double", system-ui;
+  font-weight: normal;
+}
+
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bitcount Grid Double';
+  src: url('/fonts/BitcountGridDouble.woff2') format('woff2'),
+       url('/fonts/BitcountGridDouble.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

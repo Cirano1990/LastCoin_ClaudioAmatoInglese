@@ -29,7 +29,6 @@ export default function FavoritesProvider({ children }) {
           game_id: game.id,
           game_name: game.name,
           game_image: game.background_image,
-          game_slug: game.slug,
         },
       ])
       .select();
@@ -49,7 +48,7 @@ export default function FavoritesProvider({ children }) {
     }
 
     const favoritesChannel = supabase
-      .channel("custom-all-favorites")
+      .channel("favorites")
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "favorites" },

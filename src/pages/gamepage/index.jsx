@@ -1,18 +1,22 @@
 import { useParams } from "react-router";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import RingLoader from "react-spinners/RingLoader";
 import useFetchSolution from "../../hooks/useFetch";
 import ToggleFavorite from "../../components/ToggleFavorite";
 import Chatbox from "../../components/Chatbox";
+import { useContext } from "react";
+import SessionContext from "../../context/SessionContext";
 
 export default function GamePage() {
+  const { session } = useContext(SessionContext);
+  const user = session?.user;
   const { id } = useParams();
-  const initialUrl = `https://api.rawg.io/api/games/${id}?key=6b021faf1d94421ca5d3d11e605b45d6`;
+  const initialUrl = `https://api.rawg.io/api/games/${id}?key=719af48b5cd0447b8d070f5916055454`;
   const { data, loading, error } = useFetchSolution(initialUrl);
 
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <PacmanLoader color="#FBBF24" />
+        <RingLoader color="#FBBF24" />
       </div>
     );
   }
@@ -42,9 +46,11 @@ export default function GamePage() {
             {/* Blocco info */}
             <div className=" text-text rounded-2xl p-8 relative">
               {/* Toggle preferiti */}
-              <div className="absolute top-4 right-4">
-                <ToggleFavorite data={data} />
-              </div>
+              {user && (
+                <div className="absolute top-4 right-4">
+                  <ToggleFavorite data={data} />
+                </div>
+              )}
 
               <div className="space-y-3">
                 <p className="text-sm text-smooth italic">
